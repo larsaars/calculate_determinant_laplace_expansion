@@ -1,13 +1,11 @@
 public class Main {
 
     public static void main(String[] args) {
-        double[][] matrix = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
+        double[][] matrix = createRandomMatrix(3, 100);
 
-        System.out.println(expanse(matrix));
+        System.out.println("determinant of:\n");
+        printMatrix(matrix);
+        System.out.println("= " + expanse(matrix));
     }
 
 
@@ -42,10 +40,19 @@ public class Main {
         return reducedMatrix;
     }
 
+    private static double[][] createRandomMatrix(int size, int boarder) {
+        double[][] matrix = new double[size][size];
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++)
+                matrix[i][j] = boarder - (2 * Math.random() * boarder);
+
+        return matrix;
+    }
+
     private static void printMatrix(double[][] matrix) {
         for (double[] doubles : matrix) {
-            for (double adouble : doubles) {
-                System.out.print(adouble + " ");
+            for (double d : doubles) {
+                System.out.print(d + " ");
             }
             System.out.println();
         }
