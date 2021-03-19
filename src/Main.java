@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -10,17 +7,17 @@ public class Main {
                 {7, 8, 9}
         };
 
-        System.out.println(develop(matrix));
+        System.out.println(expanse(matrix));
     }
 
 
-    private static double develop(double[][] matrix) {
+    private static double expanse(double[][] matrix) {
         if (matrix.length == 1)
             return matrix[0][0];
 
         double sum = 0;
         for (int i = 0; i < matrix.length; i++) {
-            double d = develop((reduceMatrix(matrix, i)));
+            double d = expanse((reduceMatrix(matrix, i)));
             sum += Math.pow(-1, i) * matrix[i][0] * d;
         }
 
