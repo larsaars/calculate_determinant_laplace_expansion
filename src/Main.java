@@ -23,7 +23,6 @@ public class Main {
     }
 
     private static double[][] reduceMatrix(double[][] matrix, int rowToRemove) {
-        //reduce matrix
         int reducedSize = matrix.length - 1;
         double[][] reducedMatrix = new double[reducedSize][reducedSize];
 
